@@ -35,5 +35,5 @@ Cross-validation was performed to choose the model architecture. We tested combi
 
 ## Files
 
-REBECA_tutorial.ipynb walks you through some steps of data pre-processing/ splitting and neural network deployment. 
+REBECA_tutorial.ipynb walks you through some steps of data pre-processing/ splitting and neural network deployment. <br>
 Dataset folder contains both the Dataset used for training and testing (Evfratov_dataset.csv-Stratified split described in REBECA_tutorial.ipynb) and the weights and biases of REBECA ( Rebeca_v1.2.h5)
