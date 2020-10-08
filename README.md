@@ -1,11 +1,13 @@
 # REBECA
-Developing a neural network architecture to predict RBS strength
+_Developing a neural network architecture to predict RBS strength_
 
+The concentration of different proteins in bacteria varies significantly, spanning over five orders of magnitude. This huge variation is regulated by transcriptional and translational processes, with translation playing a dominant role. In many cases, translation initiation is the rate limiting step making its prediction a good indicator of overall protein synthesis rate. <br /> This approximation has been used to predict protein expression using thermodynamic features of the 5' untranslated region (5’ UTR). However, these models often do not perform well, questioning our understanding of the core biophysical mechanisms. To overcome this limitation, we employ deep learning which makes fewer assumptions about the underlying biological processes and instead finds patterns automatically from data alone. Our learning algorithm called REBECA was trained using data from Massively Parallel Report Assays (MPRAs) to predict protein expression rate from the 5’ UTR sequence. REBECA uses a combination of recurrent and convolutional neural networks, to exploit both the sequential and contextual structure of a DNA sequence during prediction. 
 
-The final architecture had a 55% accuracy, jumping to 83% when allowing the predictions to be +/- one bin
 
 
 ## Key results
+The final architecture had a 55% accuracy, jumping to 83% when allowing the predictions to be +/- one bin
+
 
 | Metric| RBS calculator|  Evfratov | Rebeca  |
 | :---         |     :---:      |  :---:        |     :---:       |
