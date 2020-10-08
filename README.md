@@ -1,8 +1,12 @@
 # REBECA
 _Developing a neural network architecture to predict RBS strength_
-
+## Biological context
 The concentration of different proteins in bacteria varies significantly, spanning over five orders of magnitude. This huge variation is regulated by transcriptional and translational processes, with translation playing a dominant role. In many cases, translation initiation is the rate limiting step making its prediction a good indicator of overall protein synthesis rate. <br /> This approximation has been used to predict protein expression using thermodynamic features of the 5' untranslated region (5’ UTR). Our learning algorithm called REBECA was trained using data from Massively Parallel Report Assays (MPRAs) to predict protein expression rate from the 5’ UTR sequence. REBECA uses a combination of recurrent and convolutional neural networks, to exploit both the sequential and contextual structure of a DNA sequence during prediction. 
 
+## Modelisation
+Labels: DNA read count data was processed to recover the bin where most samples from one construct fall into, ranging from bin no.0 to bin no.7
+Input: 5'UTR of each mRNA sequence was extracted by defining the cut-off at the start codon AUG.
+We modelised this problem as a classification task.
 
 
 ## Key results
