@@ -18,3 +18,9 @@ The final architecture had a 55% accuracy, jumping to 83% when allowing the pred
 <br>
 
 ![REBECA](https://user-images.githubusercontent.com/66125433/95323591-563eb980-0896-11eb-81e5-497eac279826.jpg)
+
+
+## Files
+
+REBECA_tutorial.ipynb walks you through some steps of data pre-processing/ splitting and neural network deployment. 
+Dataset folder contains both the Dataset used for training and testing (Evfratov_dataset.csv-Stratified split described in REBECA_tutorial.ipynb) and the weights and biases of REBECA ( Rebeca_v1.2.h5)
