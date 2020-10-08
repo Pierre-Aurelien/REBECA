@@ -19,6 +19,11 @@ The final architecture had a 55% accuracy, jumping to 83% when allowing the pred
 
 ![REBECA](https://user-images.githubusercontent.com/66125433/95323591-563eb980-0896-11eb-81e5-497eac279826.jpg)
 
+## Architectures considered
+Sequences were one-hot encoded and padded on the right side with an array of 0 to account for the different lengths of RBS sequences, resulting in a 30 ∗ 4 array for each RBS. We reduced overfitting by artificially enlarging the training dataset using a label-preserving transformation consisting of generating image translations. The dataset was augmented by applying a shift of 0 to 10 nucleotide for sequences zero-padded on the left side. Using this trick, the number of training examples jumped from 25,389 to 130,299. We used custom scripts in addition to the Scikit modules RandomSearchCV and RandomForestRegressor. All of our models were trained with the Stochastic gradient descent optimizer, with the following hyperparameters: (learning rate=0.02, momentum=0.4, nesterov=False, clipvalue=1.0, batch size=32). We used ReLu for all activation functions. Early stopping was used to prevent overfitting to the training data. Cross-validation was performed on the training set to choose the model architecture. We tested combinations of the following hyperparameters: convolutional filter width: [9, 13, 17, 25], number of convolutional filters per layer: [32, 64, 128, 256], number of convolutional layers: [2, 3], number of dense layers: [1, 2,3], dropout probability in convolutional
+layers: [0, 0.15],lstm hidden state dimension=[50, 70]  The best combination of hyperparameters resulted in the following model architecture, trained for 18 epochs (5): Conv1D: 128 filters, kernel size=4, dropout=0;Conv1D: 64 filters, kernel size=8, dropout=0; MaxPool1D, poolsize=2, BiderectionalLSTM, 50 units, dropout=0.1, 8 unit dense layer with softmax activation.
+
+
 
 ## Files
 
