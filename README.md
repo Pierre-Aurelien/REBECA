@@ -23,8 +23,8 @@ The final architecture had a 55% accuracy, jumping to 83% when allowing the pred
 
 ![REBECA](https://user-images.githubusercontent.com/66125433/95323591-563eb980-0896-11eb-81e5-497eac279826.jpg)
 
-## Architectures considered
-Sequences were one-hot encoded and padded on the right side with an array of 0 to account for the different lengths of RBS sequences, resulting in a 30 ∗ 4 array for each RBS. We reduced overfitting by artificially enlarging the training dataset using a label-preserving transformation consisting of generating image translations. The dataset was augmented by applying a shift of 0 to 10 nucleotide for sequences zero-padded on the left side. Using this trick, the number of training examples jumped from 25,389 to 130,299. <br>
+## Architectures considered and data augmentation
+Sequences were one-hot encoded and padded on the right side with an array of 0 to account for the different lengths of 5'UTR sequences, resulting in a 30 ∗ 4 array for each 5'UTR. We reduced overfitting by artificially enlarging the training dataset using a label-preserving transformation consisting of generating image translations. The dataset was augmented by applying a shift of 0 to 10 nucleotide for sequences zero-padded on the left side. Using this trick, the number of training examples jumped from 25,389 to 130,299. <br>
 
 
 We used custom scripts in addition to the Scikit modules RandomSearchCV and RandomForestRegressor. All of our models were trained with the Stochastic gradient descent optimizer, with the following hyperparameters: (learning rate=0.02, momentum=0.4, nesterov=False, clipvalue=1.0, batch size=32). We used ReLu for all activation functions. Early stopping was used to prevent overfitting to the training data.<br>
