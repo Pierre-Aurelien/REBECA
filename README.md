@@ -10,18 +10,19 @@ We modelised this problem as a classification task.
 
 
 ## Key results
-The final architecture had a 55% accuracy, jumping to 83% when allowing the predictions to be +/- one bin
+The final architecture had a 61% accuracy, jumping to 83% when allowing the predictions to be +/- one bin
 
-
-| Metric| RBS calculator|  Evfratov | Rebeca  |
-| :---         |     :---:      |  :---:        |     :---:       |
-| R squared   | 0.78   | 0.77  |   -   |
-| Accuracy    | -    |21.3%     | __56.2%__       |
 
 
 <br>
 
-![REBECA](https://user-images.githubusercontent.com/66125433/95323591-563eb980-0896-11eb-81e5-497eac279826.jpg)
+![REBECA](https://user-images.githubusercontent.com/66125433/102891855-3f544000-445f-11eb-87cf-25b987a3da01.png)
+
+Neural network approach to model gene regulation: Architecture, performance and benchmark. A) NN architecture of Rebeca B) Accuracy on the Evfratov validation set of each different NN architecture C) Confusion Matrix for Rebeca. The true and predicted labels are respectively on the x and y axis  D) Benchmarking Rebeca on the test set against the estimated accuracies of the Salis RBS calculator and the Evfratov algorithm. 
+
+
+<img width="1026" alt="REBS_FT" src="https://user-images.githubusercontent.com/66125433/102892129-b8539780-445f-11eb-9e97-5582a155f023.png">
+Figure 2: Rebeca generalizes to other datasets (a) Density plot of the Mean fluorescence predictions as a function of the ground truth after fine tuning on the fepB dataset from Kuo et al. Orange dotted lines correspond to y=x. (b) Generalization performance on the Kuo dataset
 
 ## Architectures considered and data augmentation
 Sequences were one-hot encoded and padded on the right side with an array of 0 to account for the different lengths of 5'UTR sequences, resulting in a 30 ∗ 4 array for each 5'UTR. We reduced overfitting by artificially enlarging the training dataset using a label-preserving transformation consisting of generating image translations. The dataset was augmented by applying a shift of 0 to 10 nucleotide for sequences zero-padded on the left side. Using this trick, the number of training examples jumped from 25,389 to 130,299. <br>
